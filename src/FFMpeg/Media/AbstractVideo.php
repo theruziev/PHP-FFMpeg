@@ -262,21 +262,6 @@ abstract class AbstractVideo extends Audio
             throw new InvalidArgumentException('Pass number should be a positive value.');
         }
 
-        for ($i = 1; $i <= $totalPasses; $i++) {
-            $pass = $commands;
-
-            if ($totalPasses > 1) {
-                $pass[] = '-pass';
-                $pass[] = $i;
-                $pass[] = '-passlogfile';
-                $pass[] = $passPrefix;
-            }
-
-            $pass[] = $outputPathfile;
-
-            $passes[] = $pass;
-        }
-
         return $passes;
     }
 
